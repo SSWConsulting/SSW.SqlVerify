@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
@@ -48,21 +49,64 @@ namespace SSW.SqlVerify.Core
 
         private string lastSchemaHash()
         {
-            throw new NotImplementedException();
+            using (var conn = Configuration.ConnectionFactory.GetConnection())
+            {
+                conn.Open();
+                var command = conn.CreateCommand();
+                command.CommandText = "Select top 1 * from [" + Configuration.MetaDataTableName +"]  order by Date desc";
+
+                var reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    return reader["Hash"].ToString();
+                }
+                else return null;
+            }
         }
 
 
 
         private void saveHash(string hash)
         {
-            throw new NotImplementedException();
+            InitMetaData();
+
+            using (var conn = Configuration.ConnectionFactory.GetConnection())
+            {
+                conn.Open();
+                var command = conn.CreateCommand();
+                command.CommandText = string.Format("insert into {0} ([Hash], [Date]) values (@hash, GetDate())", Configuration.MetaDataTableName);
+                var parameter = command.CreateParameter();
+                parameter.ParameterName = "@hash";
+                parameter.Value = buildSchemaHash();
+                command.Parameters.Add(parameter);
+
+                command.ExecuteNonQuery();
+            }
+
         }
 
 
 
         private void InitMetaData()
         {
+            using (var conn = Configuration.ConnectionFactory.GetConnection())
+            {
+                conn.Open();
+                // check that METADATA TABLE exists
+                var command = conn.CreateCommand();
+                command.CommandText = "select count(table_name) from information_schema.tables where table_name='" + Configuration.MetaDataTableName + "';";
+                int count = (int)command.ExecuteScalar();
 
+                if (count == 0)
+                {
+                    var createTableCommand = conn.CreateCommand();
+                    createTableCommand.CommandText =
+                        string.Format(
+                            "Create table {0} ( Id integer primary key identity(1,1), [Hash] NVARCHAR(200), [Date] DateTime); ", Configuration.MetaDataTableName);
+                    createTableCommand.ExecuteNonQuery();
+                }
+
+            }
         }
 
 
