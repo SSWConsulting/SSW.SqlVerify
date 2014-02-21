@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSW.SqlVerify.Core", "SSW.SqlVerify.Core\SSW.SqlVerify.Core.csproj", "{925E9A7D-85EC-4FEC-83ED-051237937132}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSW.SqlVerify.Core.Test.Integration", "SSW.SqlVerify.Core.Test.Integration\SSW.SqlVerify.Core.Test.Integration.csproj", "{70002E3D-2B0E-4DB7-B929-5DF91D4D2B1D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSW.SqlVerify.Core.SqlCe", "SSW.SqlVerify.Core.SqlCe\SSW.SqlVerify.Core.SqlCe.csproj", "{BCC95B93-49CF-452D-82C7-3F94510FDA76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSW.SqlVerify.EF", "SSW.SqlVerify.EF\SSW.SqlVerify.EF.csproj", "{E4D5497B-1F53-4A1B-9B4F-A902BCB01B2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +29,10 @@ Global
 		{BCC95B93-49CF-452D-82C7-3F94510FDA76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCC95B93-49CF-452D-82C7-3F94510FDA76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCC95B93-49CF-452D-82C7-3F94510FDA76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4D5497B-1F53-4A1B-9B4F-A902BCB01B2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4D5497B-1F53-4A1B-9B4F-A902BCB01B2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4D5497B-1F53-4A1B-9B4F-A902BCB01B2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4D5497B-1F53-4A1B-9B4F-A902BCB01B2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

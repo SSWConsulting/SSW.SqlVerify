@@ -64,8 +64,8 @@ namespace SSW.SqlVerify.Core.Test.Integration
             var connString = "Data Source=" + AppPath + TEMP_FILENAME +"; Persist Security Info=False;";
             var SqlVerify = new SqlVerify(new SqlVerifyConfiguration(new SqlCeConnectionFactory(connString)));
 
-            var hash = SqlVerify.buildSchemaHash();
-            var hash2 = SqlVerify.buildSchemaHash();
+            var hash = SqlVerify.BuildSchemaHash();
+            var hash2 = SqlVerify.BuildSchemaHash();
 
             Assert.AreEqual(hash, hash2, "differing hash with no SQL change");
 
@@ -80,7 +80,7 @@ namespace SSW.SqlVerify.Core.Test.Integration
             var connString = "Data Source=" + AppPath + TEMP_FILENAME + "; Persist Security Info=False;";
             var SqlVerify = new SqlVerify(new SqlVerifyConfiguration(new SqlCeConnectionFactory(connString)));
 
-            var hash = SqlVerify.buildSchemaHash();
+            var hash = SqlVerify.BuildSchemaHash();
 
             // make a change to the schema
             using (var conn = SqlVerify.Configuration.ConnectionFactory.GetConnection())
@@ -91,7 +91,7 @@ namespace SSW.SqlVerify.Core.Test.Integration
                 command.ExecuteNonQuery();
             }
 
-            var hash2 = SqlVerify.buildSchemaHash();
+            var hash2 = SqlVerify.BuildSchemaHash();
 
             Assert.AreNotEqual(hash, hash2, "hash values equal after schema change");
         }
