@@ -1,0 +1,21 @@
+﻿<?xml version="1.0"?>
+<package>
+	<metadata>
+		<id>SSW.SqlVerify.EF</id>
+		<version>$version$</version>
+		<title>SSW.SqlVerify.EF</title>
+		<authors>Brendan Richards</authors>
+		<owners>Brendan Richards</owners>
+		<projectUrl>https://github.com/ssw-au/SSW.Framework.Web.Mvc/</projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>SSW SqlVerify EF provides Entity Framework extension to Sql Verify framework.</description>
+		<copyright />
+		<language>en-AU</language>
+		<tags>MVC</tags>
+
+		<dependencies>
+			<dependency id="SSW.SqlVerify.Core" version="1.0.0" />
+			<dependency id="EntityFramework" version="6.0.0" />
+		</dependencies>
+	</metadata>
+</package>

@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace SSW.SqlVerify.Core
 {
-    public class SqlConnectionFactory
+    public class SqlConnectionFactory : IDbConnectionFactory
     {
 
         private string _connectionString;

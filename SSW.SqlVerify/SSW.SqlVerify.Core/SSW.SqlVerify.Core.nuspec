@@ -1,0 +1,20 @@
+﻿<?xml version="1.0"?>
+<package>
+	<metadata>
+		<id>SSW.SqlVerify.Core</id>
+		<version>$version$</version>
+		<title>SSW.SqlVerify.Core</title>
+		<authors>Brendan Richards</authors>
+		<owners>Brendan Richards</owners>
+		<projectUrl>https://github.com/ssw-au/SSW.Framework.Web.Mvc/</projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>SSW SqlVerify Core provides a simple tool that performs database check whether it has been manually modified.</description>
+		<copyright />
+		<language>en-AU</language>
+		<tags>MVC</tags>
+
+		<dependencies>
+			<dependency id="log4net" version="2.0.2" />
+		</dependencies>
+	</metadata>
+</package>

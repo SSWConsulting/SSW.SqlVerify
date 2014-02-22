@@ -52,6 +52,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="SSW.SqlVerify.EF.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SSW.SqlVerify.Core\SSW.SqlVerify.Core.csproj">
