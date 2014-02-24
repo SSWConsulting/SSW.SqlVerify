@@ -1,5 +1,6 @@
 ﻿namespace SSW.SqlVerify.Core
 {
+    using System.Data.SqlClient;
     using System.Security.Cryptography;
     using System.Text;
 
@@ -148,9 +149,16 @@
                                       "ORDER BY Date DESC";
 
                 var reader = command.ExecuteReader();
-                if (reader.Read())
+                try
                 {
-                    return reader["Hash"].ToString();
+                    if (reader.Read())
+                    {
+                        return reader["Hash"].ToString();
+                    }
+                }
+                catch (SqlException)
+                {
+                    return null;
                 }
 
                 return null;
