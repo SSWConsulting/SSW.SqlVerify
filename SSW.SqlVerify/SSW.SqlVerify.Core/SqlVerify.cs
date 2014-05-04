@@ -73,7 +73,32 @@
         /// <returns>True, if hashes are the same, false otherwise</returns>
         public bool VerifyDb()
         {
-            return this.BuildSchemaHash() == this.LastSchemaHash();
+            if (this.CheckIfExists())
+            {
+                return this.BuildSchemaHash() == this.LastSchemaHash();
+            }
+
+            this.UpdateDb();
+            return true;
+        }
+
+        /// <summary>
+        /// Checks if exists.
+        /// </summary>
+        /// <returns></returns>
+        private bool CheckIfExists()
+        {
+            using (var conn = this.Configuration.ConnectionFactory.GetConnection())
+            {
+                conn.Open();
+                
+                // check that METADATA TABLE exists
+                var command = conn.CreateCommand();
+                command.CommandText = "SELECT COUNT(table_name) FROM information_schema.tables WHERE table_name='" + this.Configuration.MetaDataTableName + "';";
+                var count = (int)command.ExecuteScalar();
+
+                return count > 0;
+            }
         }
 
         /// <summary>

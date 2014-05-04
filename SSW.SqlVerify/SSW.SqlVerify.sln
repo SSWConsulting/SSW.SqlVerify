@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3D7108
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSW.SqlVerify.DbUp", "SSW.SqlVerify.DbUp\SSW.SqlVerify.DbUp.csproj", "{9CC860BA-8A51-45C3-B371-DC95B982D5D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{E4D5497B-1F53-4A1B-9B4F-A902BCB01B2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4D5497B-1F53-4A1B-9B4F-A902BCB01B2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4D5497B-1F53-4A1B-9B4F-A902BCB01B2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CC860BA-8A51-45C3-B371-DC95B982D5D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CC860BA-8A51-45C3-B371-DC95B982D5D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CC860BA-8A51-45C3-B371-DC95B982D5D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CC860BA-8A51-45C3-B371-DC95B982D5D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
